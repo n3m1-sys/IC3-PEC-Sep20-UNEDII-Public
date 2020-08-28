@@ -25,7 +25,7 @@ architecture bp_ej1 of bp_ej1 is
 
 begin
   -- Definir el componente del ejercicio 1
-  utt : component ej1 port map (x,y,z,F1,F2);
+  uut : component ej1 port map (x,y,z,F1,F2);
 
   -- Proceso del banco de pruebas
   test : process
