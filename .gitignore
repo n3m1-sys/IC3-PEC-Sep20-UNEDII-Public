@@ -1,4 +1,6 @@
 *.o
+*.cf
 *.vcd
 bp_ej1_comportamiento
 bp_ej1_estructura
+bp_ej2
