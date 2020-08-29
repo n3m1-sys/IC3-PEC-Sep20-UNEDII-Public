@@ -86,7 +86,7 @@ end entity nor3;
 
 architecture nor3 of nor3 is
 begin
-  o <= ( a nor b ) nor c;
+  o <= not ( a and b and c );
 end architecture nor3;
 
 library IEEE;
@@ -167,7 +167,7 @@ begin
   And2_1 : and2 port map(m0,or2_1s,and2_1s);
   Or2_2  : or2  port map(and3_1s,and2_1s,or2_1s);
   Nor3_1 : nor3 port map(m0,m1,m2,vigila);
-  And2_2 : and2 port map(or2_2s,habilita);
+  And2_2 : and2 port map(or2_2s,habilita,alarma);
   Not1_2 : not1 port map(habilita,disp(0));
   GND_1  : gnd  port map(disp(1));
 
