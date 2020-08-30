@@ -34,6 +34,7 @@ begin
         sout2 <= "0000000"; 
         sout3 <= "0000000";
     end case;
+    wait;
   end process circuito;
 
 end architecture ej2_circuitoB;
