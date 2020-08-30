@@ -10,7 +10,7 @@ use IEEE.std_logic_1164.all;
 
 entity ej2_circuitoB is
   port(
-    sin : in std_logic_vector(1 downto 0);
+    s_in : in std_logic_vector(1 downto 0); -- sin es una palabra reservada
     sout1, sout2, sout3 : out std_logic_vector(6 downto 0)
     );
 end entity ej2_circuitoB;
@@ -20,10 +20,19 @@ begin
 
   circuito : process
   begin
-    case sin is
-      when "00" => sout1 <= "0000000"; sout2 <= "0111111"; sout3 <= "1010100";
-      when "01" => sout1 <= "0111111"; sout2 <= "1110001"; sout3 <= "1110001";
-      when others => sout1 <= "0000000"; sout2 <= "0000000"; sout3 <= "0000000";
+    case s_in is
+      when "00" =>          -- ON 
+        sout1 <= "0000000"; 
+        sout2 <= "0111111"; 
+        sout3 <= "1010100";
+      when "01" =>          -- OFF
+        sout1 <= "0111111"; 
+        sout2 <= "1110001"; 
+        sout3 <= "1110001";
+      when others =>        -- Caso imposible : Apagar display
+        sout1 <= "0000000"; 
+        sout2 <= "0000000"; 
+        sout3 <= "0000000";
     end case;
   end process circuito;
 

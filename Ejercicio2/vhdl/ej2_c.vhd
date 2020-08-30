@@ -28,7 +28,7 @@ architecture ej2 of ej2 is
 
   component ej2_circuitoB is
     port(
-      sin : in std_logic_vector(1 downto 0);
+      s_in : in std_logic_vector(1 downto 0); -- sin es una palabra reservada
       sout1, sout2, sout3 : out std_logic_vector(6 downto 0)
       );
   end component ej2_circuitoB;
