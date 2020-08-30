@@ -29,93 +29,109 @@ architecture bp_ej2 of bp_ej2 is
 
 begin
 
-  utt : ej2 port map(habilita, m0, m1, m2, alarma, vigila, sout1, sout2, sout3);
+  uut : ej2 port map(habilita, m0, m1, m2, alarma, vigila, sout1, sout2, sout3);
 
   test : process
   begin
 
     habilita <= '0'; m0 <= '0'; m1 <= '0'; m2 <= '0';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '1' and sout1 = "0111111" and sout2 = "1110001" and sout3 = "1110001")
       report "Falla para habilita <= 0; m0 <= 0; m1 <= 0; m2 <= 0" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '0'; m0 <= '0'; m1 <= '0'; m2 <= '1';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0111111" and sout2 = "1110001" and sout3 = "1110001")
       report "Falla para habilita <= 0; m0 <= 0; m1 <= 0; m2 <= 1" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '0'; m0 <= '0'; m1 <= '1'; m2 <= '0';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0111111" and sout2 = "1110001" and sout3 = "1110001")
       report "Falla para habilita <= 0; m0 <= 0; m1 <= 1; m2 <= 0" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '0'; m0 <= '0'; m1 <= '1'; m2 <= '1';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0111111" and sout2 = "1110001" and sout3 = "1110001")
       report "Falla para habilita <= 0; m0 <= 0; m1 <= 1; m2 <= 1" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '0'; m0 <= '1'; m1 <= '0'; m2 <= '0';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0111111" and sout2 = "1110001" and sout3 = "1110001")
       report "Falla para habilita <= 0; m0 <= 1; m1 <= 0; m2 <= 0" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '0'; m0 <= '1'; m1 <= '0'; m2 <= '1';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0111111" and sout2 = "1110001" and sout3 = "1110001")
       report "Falla para habilita <= 0; m0 <= 1; m1 <= 0; m2 <= 1" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '0'; m0 <= '1'; m1 <= '1'; m2 <= '0';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0111111" and sout2 = "1110001" and sout3 = "1110001")
       report "Falla para habilita <= 0; m0 <= 1; m1 <= 1; m2 <= 0" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '0'; m0 <= '1'; m1 <= '1'; m2 <= '1';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0111111" and sout2 = "1110001" and sout3 = "1110001")
       report "Falla para habilita <= 0; m0 <= 1; m1 <= 1; m2 <= 1" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '1'; m0 <= '0'; m1 <= '0'; m2 <= '0';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '1' and sout1 = "0000000" and sout2 = "0111111" and sout3 = "1010100")
       report "Falla para habilita <= 1; m0 <= 0; m1 <= 0; m2 <= 0" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '1'; m0 <= '0'; m1 <= '0'; m2 <= '1';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0000000" and sout2 = "0111111" and sout3 = "1010100")
       report "Falla para habilita <= 1; m0 <= 0; m1 <= 0; m2 <= 1" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '1'; m0 <= '0'; m1 <= '1'; m2 <= '0';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0000000" and sout2 = "0111111" and sout3 = "1010100")
       report "Falla para habilita <= 1; m0 <= 0; m1 <= 1; m2 <= 0" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '1'; m0 <= '0'; m1 <= '1'; m2 <= '1';
+    wait for 10 ns;
     assert (alarma = '1' and vigila = '0' and sout1 = "0000000" and sout2 = "0111111" and sout3 = "1010100")
       report "Falla para habilita <= 1; m0 <= 0; m1 <= 1; m2 <= 1" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '1'; m0 <= '1'; m1 <= '0'; m2 <= '0';
+    wait for 10 ns;
     assert (alarma = '0' and vigila = '0' and sout1 = "0000000" and sout2 = "0111111" and sout3 = "1010100")
       report "Falla para habilita <= 1; m0 <= 1; m1 <= 0; m2 <= 0" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '1'; m0 <= '1'; m1 <= '0'; m2 <= '1';
+    wait for 10 ns;
     assert (alarma = '1' and vigila = '0' and sout1 = "0000000" and sout2 = "0111111" and sout3 = "1010100")
       report "Falla para habilita <= 1; m0 <= 1; m1 <= 0; m2 <= 1" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '1'; m0 <= '1'; m1 <= '1'; m2 <= '0';
+    wait for 10 ns;
     assert (alarma = '1' and vigila = '0' and sout1 = "0000000" and sout2 = "0111111" and sout3 = "1010100")
       report "Falla para habilita <= 1; m0 <= 1; m1 <= 1; m2 <= 0" severity failure;
-    wait for 10 ns;
+    
 
     habilita <= '1'; m0 <= '1'; m1 <= '1'; m2 <= '1';
+    wait for 10 ns;
     assert (alarma = '1' and vigila = '0' and sout1 = "0000000" and sout2 = "0111111" and sout3 = "1010100")
       report "Falla para habilita <= 1; m0 <= 1; m1 <= 1; m2 <= 1" severity failure;
-    wait for 10 ns;
+    
 
     report "Simulación del banco de pruebas finalizado";
-
+    wait;
   end process test;
  
 end architecture bp_ej2;
