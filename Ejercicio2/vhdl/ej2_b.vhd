@@ -18,7 +18,7 @@ end entity ej2_circuitoB;
 architecture ej2_circuitoB of ej2_circuitoB is
 begin
 
-  circuito : process
+  circuito : process(s_in)
   begin
     case s_in is
       when "00" =>          -- ON 
@@ -34,7 +34,6 @@ begin
         sout2 <= "0000000"; 
         sout3 <= "0000000";
     end case;
-    wait;
   end process circuito;
 
 end architecture ej2_circuitoB;
