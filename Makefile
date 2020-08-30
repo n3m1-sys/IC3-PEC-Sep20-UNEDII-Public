@@ -16,21 +16,27 @@ EJ1_ESTR_VHDL = ej1_a.vhd ej1_c.vhd ej1_d.vhd ej1_e.vhd
 ej1comportamiento: $(PATH_EJ1)/vhdl/ej1_a.vhd $(PATH_EJ1)/vhdl/ej1_b.vhd $(PATH_EJ1)/vhdl/ej1_e.vhd
 	cd $(PATH_EJ1)/vhdl && $(GHDL) -a $(EJ1_COMP_VHDL)
 	cd $(PATH_EJ1)/vhdl && $(GHDL) -e bp_ej1
-	cd $(PATH_EJ1)/vhdl && rm *.o *.cf && mv bp_ej1 bp_ej1_comportamiento
-	cd $(PATH_EJ1)/vhdl && ./bp_ej1_comportamiento --vcd=../vcd/bp_ej2.vcd
+	mkdir -p $(PATH_EJ1)/bin
+	cd $(PATH_EJ1)/vhdl && rm *.o *.cf && mv bp_ej1 ../bin/bp_ej1_comportamiento
+	mkdir -p $(PATH_EJ1)/vcd
+	cd $(PATH_EJ1)/bin && ./bp_ej1_comportamiento --vcd=../vcd/bp_ej2.vcd
 
 # Estructura
 
 ej1estructura: $(PATH_EJ1)/vhdl/ej1_a.vhd $(PATH_EJ1)/vhdl/ej1_c.vhd $(PATH_EJ1)/vhdl/ej1_d.vhd $(PATH_EJ1)/vhdl/ej1_e.vhd
 	cd $(PATH_EJ1)/vhdl && $(GHDL) -a $(EJ1_ESTR_VHDL)
 	cd $(PATH_EJ1)/vhdl && $(GHDL) -e bp_ej1
-	cd $(PATH_EJ1)/vhdl && rm *.o *.cf && mv bp_ej1 bp_ej1_estructura
-	cd $(PATH_EJ1)/vhdl && ./bp_ej1_estructura --vcd=../vcd/bp_ej2.vcd
+	mkdir -p $(PATH_EJ1)/bin
+	cd $(PATH_EJ1)/vhdl && rm *.o *.cf && mv bp_ej1 ../bin/bp_ej1_estructura
+	mkdir -p $(PATH_EJ1)/vcd
+	cd $(PATH_EJ1)/bin && ./bp_ej1_estructura --vcd=../vcd/bp_ej2.vcd
 
 # EJERCICIO 2
 
 ej2: $(PATH_EJ2)/vhdl/ej2_a.vhd $(PATH_EJ2)/vhdl/ej2_b.vhd $(PATH_EJ2)/vhdl/ej2_c.vhd $(PATH_EJ2)/vhdl/ej2_d.vhd
 	cd $(PATH_EJ2)/vhdl && $(GHDL) -a *.vhd
 	cd $(PATH_EJ2)/vhdl && $(GHDL) -e bp_ej2
-	cd $(PATH_EJ2)/vhdl && rm *.o *.cf
-	cd $(PATH_EJ2)/vhdl && ./bp_ej2 --vcd=../vcd/bp_ej2.vcd
+	mkdir -p $(PATH_EJ2)/bin
+	cd $(PATH_EJ2)/vhdl && rm *.o *.cf && mv bp_ej2 ../bin/
+	mkdir -p $(PATH_EJ1)/vcd
+	cd $(PATH_EJ2)/bin && ./bp_ej2 --vcd=../vcd/bp_ej2.vcd
