@@ -38,5 +38,5 @@ ej2: $(PATH_EJ2)/vhdl/ej2_a.vhd $(PATH_EJ2)/vhdl/ej2_b.vhd $(PATH_EJ2)/vhdl/ej2_
 	cd $(PATH_EJ2)/vhdl && $(GHDL) -e bp_ej2
 	mkdir -p $(PATH_EJ2)/bin
 	cd $(PATH_EJ2)/vhdl && rm *.o *.cf && mv bp_ej2 ../bin/
-	mkdir -p $(PATH_EJ1)/vcd
+	mkdir -p $(PATH_EJ2)/vcd
 	cd $(PATH_EJ2)/bin && ./bp_ej2 --vcd=../vcd/bp_ej2.vcd
