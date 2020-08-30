@@ -19,7 +19,7 @@ ej1comportamiento: $(PATH_EJ1)/vhdl/ej1_a.vhd $(PATH_EJ1)/vhdl/ej1_b.vhd $(PATH_
 	mkdir -p $(PATH_EJ1)/bin
 	cd $(PATH_EJ1)/vhdl && rm *.o *.cf && mv bp_ej1 ../bin/bp_ej1_comportamiento
 	mkdir -p $(PATH_EJ1)/vcd
-	cd $(PATH_EJ1)/bin && ./bp_ej1_comportamiento --vcd=../vcd/bp_ej2.vcd
+	cd $(PATH_EJ1)/bin && ./bp_ej1_comportamiento --vcd=../vcd/bp_ej1_comportamiento.vcd
 
 # Estructura
 
@@ -29,7 +29,7 @@ ej1estructura: $(PATH_EJ1)/vhdl/ej1_a.vhd $(PATH_EJ1)/vhdl/ej1_c.vhd $(PATH_EJ1)
 	mkdir -p $(PATH_EJ1)/bin
 	cd $(PATH_EJ1)/vhdl && rm *.o *.cf && mv bp_ej1 ../bin/bp_ej1_estructura
 	mkdir -p $(PATH_EJ1)/vcd
-	cd $(PATH_EJ1)/bin && ./bp_ej1_estructura --vcd=../vcd/bp_ej2.vcd
+	cd $(PATH_EJ1)/bin && ./bp_ej1_estructura --vcd=../vcd/bp_ej1_estructura.vcd
 
 # EJERCICIO 2
 
