@@ -1,6 +1,40 @@
+# Resultados de la compilación
+
 *.o
 *.cf
 *.vcd
+
+# Binarios compilados
+
 bp_ej1_comportamiento
 bp_ej1_estructura
 bp_ej2
+
+# LaTeX
+
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+
+*.fls
+*.fdb_latexmk
