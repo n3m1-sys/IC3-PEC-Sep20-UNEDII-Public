@@ -1,5 +1,7 @@
 # IC3-PEC-Sep20-UNEDII
 
+Público desde el día 21/09/2020 a las 18:09 GMT+2.
+
 ### Informe:
 
 El pdf del informe se encuentra dentro de la carpeta `Informe/` junto al código fuente en LaTeX por si se deseara recompilarlo.
